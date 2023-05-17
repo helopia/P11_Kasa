@@ -1,21 +1,15 @@
-import {useNavigate} from "react-router-dom";
+import { useRouteError } from "react-router-dom";
 
-const Error = () => {
-    const navigate = useNavigate();
+const ErrorPage = () => {
+  const error = useRouteError();
+  console.error(error);
 
-    return(
-        <>
-            <p>Error</p>
-            <button onClick={() => navigate("/")}>
-                go to home page
-            </button>
-            <button onClick={() => navigate("/about")}>
-                go to about page
-            </button>
-            <button onClick={() => navigate("/logement")}>
-                go to logement page
-            </button>
-        </>
-    )
-}
-export default Error;
+  return (
+    <div id="error-page">
+      <h1>404</h1>
+      <p>Oups! La page que vous demandez n'existe pas</p>
+      <a href="/">retourner sur la page d'acceuil</a>
+    </div>
+  );
+};
+export default ErrorPage;

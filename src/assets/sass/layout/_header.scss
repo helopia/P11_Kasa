@@ -1,0 +1,6 @@
+@import "../../sass/utils/mixins";
+.navbar{
+  @include flex (row, space-between, center);
+  height: 68px;
+  margin: 0 40px 0 40px;
+}

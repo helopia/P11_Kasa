@@ -1,23 +1,16 @@
-import {useNavigate} from "react-router-dom";
-import Banner from "../component /Banner";
+import { useLoaderData } from "react-router-dom";
+import Card from "../component/Card";
 
 const Home = () => {
-    const navigate = useNavigate();
+  const { dataLogements } = useLoaderData();
 
-    return(
-        <>
-            <p>HOME</p>
-            <button onClick={() => navigate("/about")}>
-                go to about page
-            </button>
-            <button onClick={() => navigate("/error")}>
-                go to error page
-            </button>
-            <Banner/>
-            <button onClick={() => navigate("/logement")}>
-                go to logement page
-            </button>
-        </>
-    )
-}
+  return (
+    <>
+      <p>HOME</p>
+      {dataLogements?.map((logement, key) => (
+        <Card key={key} logement={logement} />
+      ))}
+    </>
+  );
+};
 export default Home;

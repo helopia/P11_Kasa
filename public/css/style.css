@@ -1,3 +1,14 @@
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.navbar {
+  display: flex;
+  /** Si on a n'a pas besoin de flex direction cet attribut ne dois pas etre affiché*/
+  flex-direction: row;
+  /** si le pramettre  $justify-content égale à 0 >> on utilise pas l'attribut justify-content */
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  margin: 0 40px 0 40px;
+}
 
 /*# sourceMappingURL=style.css.map */
