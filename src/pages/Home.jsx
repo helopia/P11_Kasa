@@ -1,15 +1,23 @@
 import { useLoaderData } from "react-router-dom";
 import Card from "../component/Card";
+import Banner from "../component/Banner";
 
 const Home = () => {
   const { dataLogements } = useLoaderData();
 
   return (
     <>
-      <p>HOME</p>
-      {dataLogements?.map((logement, key) => (
-        <Card key={key} logement={logement} />
-      ))}
+      <main className="main page-acceuil">
+        <Banner
+          bannerClass="banner__home"
+          title="Chez vous, partout et ailleurs"
+        />
+        <section className="annonces">
+          {dataLogements?.map((logement, key) => (
+            <Card key={key} logement={logement} />
+          ))}
+        </section>
+      </main>
     </>
   );
 };

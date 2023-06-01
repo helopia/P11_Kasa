@@ -1,6 +1,24 @@
 @import "../../sass/utils/mixins";
-.navbar{
-  @include flex (row, space-between, center);
+@import "../../sass/utils/variables";
+.navbar {
+  @include flex(row, space-between, center);
   height: 68px;
-  margin: 0 40px 0 40px;
+  margin: 0 ;
+
+  &__log {
+
+    width: 54px;
+  }
+
+  &__nav {
+    &__link {
+      margin-left: 57px;
+      font-size: 24px;
+      color: $primary-color;
+
+      &.active {
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+  }
 }

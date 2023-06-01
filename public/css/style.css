@@ -1,5 +1,122 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  font-size: 0.75rem; /* 12px */
+  color: #FF6060;
+  width: 90%;
+  margin: auto;
+  font-family: "Montserrat", DMSans, sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  min-height: 400px;
+  width: 100%;
+}
+
+section {
+  width: 100%;
+}
+
+.banner {
+  height: 223px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.banner__title {
+  color: white;
+  font-size: 48px;
+  font-weight: 500;
+}
+.banner__home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");
+}
+.banner__about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerApropos.png");
+}
+
+.logement-card {
+  border-radius: 10px;
+  position: relative;
+}
+.logement-card__overlay {
+  box-shadow: inset -1px -81px 84px -37px #000;
+  inset: 0;
+  position: absolute;
+  border-radius: 10px;
+}
+.logement-card__img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.logement-card__title {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-left: 7px;
+  top: -77px;
+}
+
+.banner {
+  height: 223px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+.banner__title {
+  color: white;
+  font-size: 48px;
+  font-weight: 500;
+}
+.banner__home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");
+}
+.banner__about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerApropos.png");
+}
+
+.footer {
+  height: 209px;
+  background-color: #000000;
+  color: #FFFFFF;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer__text {
+  margin-top: 40px;
+  font-size: 24px;
+}
+
 .navbar {
   display: flex;
   /** Si on a n'a pas besoin de flex direction cet attribut ne dois pas etre affiché*/
@@ -8,7 +125,46 @@
   justify-content: space-between;
   align-items: center;
   height: 68px;
-  margin: 0 40px 0 40px;
+  margin: 0;
+}
+.navbar__log {
+  width: 54px;
+}
+.navbar__nav__link {
+  margin-left: 57px;
+  font-size: 24px;
+  color: #FF6060;
+}
+.navbar__nav__link.active {
+  border-bottom: 1px solid #FF6060;
+}
+
+.annonces {
+  margin-top: 40px;
+  background-color: #F6F6F6;
+  padding: 40px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.error-page {
+  text-align: center;
+  color: #FF6060;
+}
+.error-page__404 {
+  font-size: 288px;
+  font-weight: 700;
+}
+.error-page__text {
+  font-size: 36px;
+  padding-bottom: 180px;
+}
+.error-page__link {
+  font-size: 18px;
+  font-weight: 500;
+  color: #FF6060;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,20 +1,69 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
+import { useState } from "react";
+import ArrowRight from "../assets/images/ArrowRight.svg";
+import ArrowLeft from "../assets/images/ArrowLeft.svg";
 const Logement = () => {
   const { dataLogements } = useLoaderData();
   const { IdLogement } = useParams();
+  const [pictureLogement, setPictureLogement] = useState(0);
+  console.log("pictureLogement", pictureLogement);
 
   const dataLogementIndex = dataLogements?.findIndex(
     (logement) => logement.id === IdLogement
   );
 
   const dataLogement = dataLogements[dataLogementIndex];
+  //create 2 functions for carousel navigation
+  const onClickNextSlide =
+    // () =>
+    // Utilisation de l'opérateur ternaire , version if... else au dessous
+    // setPictureLogement((prev) =>
+    //   prev === dataLogements?.pictures?.length - 1
+    //     ? setPictureLogement(0)
+    //     : prev + 1
+    // );
+    () => {
+      if (pictureLogement === dataLogement?.pictures?.length - 1)
+        setPictureLogement(0);
+      else setPictureLogement((prev) => prev + 1);
+    };
+
+  const onClickPreviousSlide = () => {
+    setPictureLogement(pictureLogement - 1);
+    if (pictureLogement === 0) setPictureLogement(0);
+  };
+
+  //   setPictureLogement((prev) =>
+  //     prev === setPictureLogement(pictureLogement - 1)
+  //       ? setPictureLogement(0)
+  //       : prev - 1
+  //   );
+  // };
 
   return (
     <div>
-      <div>
-        <p>image</p>
-      </div>
+      <>
+        {/*<p>{dataLogement?.pictures[0]}</p>*/}
+        <img
+          src={dataLogement?.pictures[pictureLogement]}
+          alt="photo du logement"
+        />
+        ;
+        <button onClick={onClickPreviousSlide}>
+          <img
+            className="carrousel__arrow-right"
+            src={ArrowRight}
+            alt="show next slide"
+          />
+        </button>
+        <button onClick={onClickNextSlide}>
+          <img
+            className="carrousel__arrow-left"
+            src={ArrowLeft}
+            alt="show previous slide"
+          />
+        </button>
+      </>
       <div>
         <div>
           <p>{dataLogement?.title}</p>

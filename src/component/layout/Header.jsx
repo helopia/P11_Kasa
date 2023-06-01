@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Navbarlogo from "../../assets/images/NavbarLogo.svg";
+import "../../assets/sass/layout/_header.scss";
 const Header = () => {
   // const navigate = useNavigate();
   return (

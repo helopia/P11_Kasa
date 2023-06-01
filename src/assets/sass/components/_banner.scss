@@ -1,0 +1,25 @@
+@import "../../sass/utils/variables";
+
+.banner{
+  height: 223px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+
+
+  &__title{
+    color: white;
+    font-size: 48px;
+    font-weight: $font-medium;
+
+  }
+  &__home{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");
+  }
+  &__about{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("../../images/bannerApropos.png");
+  }
+
+}

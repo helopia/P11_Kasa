@@ -1,7 +1,14 @@
 //@import
+@import "./base/base";
+@import "./base/layout";
 @import "./components/banner";
 @import "./components/card";
+@import "./components/collapse";
+@import "./components/banner";
 @import "./layout/footer";
 @import "./layout/header";
+@import "./pages/home";
+@import "./pages/error";
+@import "./pages/about";
 @import "./utils/variables";
 @import "./utils/mixins";

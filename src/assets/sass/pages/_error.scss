@@ -1,0 +1,25 @@
+@import '../../sass/utils/variables';
+
+.error-page{
+  text-align: center;
+  color :$primary-color;
+  &__404{
+    font-size: 288px;
+    font-weight: $font-bold;
+
+  }
+  &__text{
+    font-size: 36px;
+    padding-bottom: 180px;
+
+  }
+  &__link{
+    font-size:18px;
+    font-weight: $font-medium;
+    color :$primary-color;
+    //&.active{
+    //  border-bottom:1px solid $primary-color;
+    //}
+  }
+
+}

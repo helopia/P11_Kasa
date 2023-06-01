@@ -1,0 +1,17 @@
+@import "../../sass/utils/variables";
+@import "../../sass/utils/mixins";
+.annonces{
+  margin-top: 40px;
+  background-color: $background;
+  padding: 40px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap : 40px;
+  //@include responsive(smartphone){
+  //  grid-template-columns: 1fr;
+  //  padding: 0px;
+  //  background-color: #FFFFFF;
+  //  gap :20px;
+  //}
+}
