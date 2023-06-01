@@ -15,7 +15,7 @@ const Card = ({ logement }) => {
           src={logement?.cover}
           alt="logement"
         />
-        <h2 className="logement-card__title">{logement?.titre}</h2>
+        <h2 className="logement-card__title">{logement?.title}</h2>
       </Link>
     </article>
   );

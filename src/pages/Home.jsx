@@ -12,7 +12,7 @@ const Home = () => {
           bannerClass="banner__home"
           title="Chez vous, partout et ailleurs"
         />
-        <section className="annonces">
+        <section className="logement">
           {dataLogements?.map((logement, key) => (
             <Card key={key} logement={logement} />
           ))}

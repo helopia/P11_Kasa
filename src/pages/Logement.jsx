@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { useState } from "react";
 import ArrowRight from "../assets/images/ArrowRight.svg";
 import ArrowLeft from "../assets/images/ArrowLeft.svg";
+import "../assets/sass/pages/_logement.scss";
 const Logement = () => {
   const { dataLogements } = useLoaderData();
   const { IdLogement } = useParams();
@@ -41,39 +42,45 @@ const Logement = () => {
   // };
 
   return (
-    <div>
-      <>
-        {/*<p>{dataLogement?.pictures[0]}</p>*/}
+    <main className="location">
+      {/*<p>{dataLogement?.pictures[0]}</p>*/}
+      <section className="location__carousel">
         <img
+          className="location__carousel__img"
           src={dataLogement?.pictures[pictureLogement]}
           alt="photo du logement"
         />
-        ;
-        <button onClick={onClickPreviousSlide}>
-          <img
-            className="carrousel__arrow-right"
-            src={ArrowRight}
-            alt="show next slide"
-          />
-        </button>
-        <button onClick={onClickNextSlide}>
-          <img
-            className="carrousel__arrow-left"
-            src={ArrowLeft}
-            alt="show previous slide"
-          />
-        </button>
-      </>
-      <div>
-        <div>
-          <p>{dataLogement?.title}</p>
-          <p>{dataLogement?.location}</p>
+
+        <div className="location__carousel__nav">
+          <button onClick={onClickPreviousSlide}>
+            <img
+              className="location__carousel__nav__arrow-right"
+              src={ArrowRight}
+              alt="show next slide"
+            />
+          </button>
+          <button onClick={onClickNextSlide}>
+            <img
+              className="location__carousel__nav__arrow-left"
+              src={ArrowLeft}
+              alt="show previous slide"
+            />
+          </button>
+        </div>
+      </section>
+      <section>
+        <section className="location__infos">
+          <h1>{dataLogement?.title}</h1>
+          <h3>{dataLogement?.location}</h3>
+        </section>
+        <section className="location__dropdown">
           <ul>
             {dataLogement?.tags?.map((tag, key) => {
               return <li key={key}>{tag}</li>;
             })}
           </ul>
-        </div>
+        </section>
+
         <div>
           <div>
             <div>{dataLogement?.host?.name}</div>
@@ -83,7 +90,7 @@ const Logement = () => {
             <p>étoiles</p>
           </div>
         </div>
-      </div>
+      </section>
       <div>
         <div>
           <p>description</p>
@@ -98,7 +105,7 @@ const Logement = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 export default Logement;
