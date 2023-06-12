@@ -85,20 +85,21 @@ const Logement = () => {
         />
 
         <div className="location__carousel__nav">
-          <button onClick={onClickPreviousSlide}>
-            <img
-              className="location__carousel__nav__arrow-right"
-              src={ArrowRight}
-              alt="show next slide"
-            />
-          </button>
-          <button onClick={onClickNextSlide}>
-            <img
-              className="location__carousel__nav__arrow-left"
-              src={ArrowLeft}
-              alt="show previous slide"
-            />
-          </button>
+          <img
+            onClick={onClickPreviousSlide}
+            className="location__carousel__nav__arrow-right"
+            src={ArrowRight}
+            alt="show next slide"
+            role="button"
+          />
+
+          <img
+            onClick={onClickNextSlide}
+            className="location__carousel__nav__arrow-left"
+            src={ArrowLeft}
+            alt="show previous slide"
+            role="button"
+          />
         </div>
       </section>
       <section className="location__infos">
