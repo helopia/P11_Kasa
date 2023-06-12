@@ -1,11 +1,8 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
 import "../../src/assets/sass/components/_card.scss";
 import { Link } from "react-router-dom";
 
 const Card = ({ logement }) => {
-  // const navigate = useNavigate();
-
   return (
     <article className="logement-card">
       <Link to={"/logement/" + logement?.id}>

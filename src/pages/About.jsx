@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import Banner from "../component/Banner";
 import Dropdown from "../component/Dropdown";
 

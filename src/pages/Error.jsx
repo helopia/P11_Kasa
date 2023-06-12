@@ -25,6 +25,3 @@ const ErrorPage = () => {
   );
 };
 export default ErrorPage;
-
-// rendu conditionnel ligne 16 25 !!!!! important !!!! important!!! faire le dropdown avec ça
-// un state toggle open or close & accordeon if open show and ifnot don't show

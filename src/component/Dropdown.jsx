@@ -13,21 +13,10 @@ const Dropdown = ({ content, title }) => {
       <div className="dropdown__title" onClick={toggleDropdown}>
         <h2>{title}</h2>
         <button>
-          {/*{isOpen ? <img src={ArrowUp} /> : <img src={ArrowDown} />}*/}
           <img src={isOpen ? ArrowUp : ArrowDown} />
         </button>
       </div>
       <div className="dropdown__content">
-        {/*{isOpen && title === "Équipements" ? (*/}
-        {/*  <ul>*/}
-        {/*    {content?.map((item, index) => (*/}
-        {/*      <li key={index}>{item}</li>*/}
-        {/*    ))}*/}
-        {/*  </ul>*/}
-        {/*) : (*/}
-        {/*  isOpen && <p>{content}</p>*/}
-        {/*)}*/}
-
         {isOpen && typeof content === "string" && <p>{content}</p>}
         {isOpen && typeof content === "object" && (
           <ul>
