@@ -231,6 +231,7 @@ a {
 }
 .error-page__404 {
   font-size: 288px;
+  line-height: 10px;
   font-weight: 700;
 }
 @media (max-width: 768px) {
@@ -240,7 +241,6 @@ a {
 }
 .error-page__text {
   font-size: 36px;
-  padding-bottom: 180px;
 }
 .error-page__link {
   font-size: 18px;

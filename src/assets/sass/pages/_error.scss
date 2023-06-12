@@ -8,16 +8,14 @@
   color :$primary-color;
   &__404{
     font-size: 288px;
+    line-height: 10px;
     font-weight: $font-bold;
     @media (max-width: $tablets) {
       font-size: 140px;
     }
-
   }
   &__text{
     font-size: 36px;
-    padding-bottom: 180px;
-
   }
   &__link{
     font-size:18px;
