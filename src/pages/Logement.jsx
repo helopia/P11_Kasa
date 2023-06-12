@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import ArrowRight from "../assets/images/ArrowRight.svg";
 import ArrowLeft from "../assets/images/ArrowLeft.svg";
@@ -7,20 +7,22 @@ import Dropdown from "../component/Dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import Error from "./Error";
+
 const Logement = () => {
   const { dataLogements } = useLoaderData();
   const { IdLogement } = useParams();
   const [pictureLogement, setPictureLogement] = useState(0);
   console.log("pictureLogement", pictureLogement);
-
+  // const navigate = useNavigate();
   const dataLogementIndex = dataLogements?.findIndex(
     (logement) => logement.id === IdLogement
   );
-  // test pour la page d'erreur en dessous
-
-  // if (!dataLogements) {
-  //   return <Error />;
+  // // test pour la page d'erreur en dessous
+  // console.log("dataLogementIndex", dataLogementIndex);
+  // if (dataLogementIndex === -1) {
+  //   navigate("/404");
   // }
+
   const dataLogement = dataLogements[dataLogementIndex];
   //create 2 functions for carousel navigation
   const onClickNextSlide =
@@ -49,7 +51,7 @@ const Logement = () => {
   //   );
   // };
   const maxRating = 5; // nombre d'étoiles maximum
-  const rating = dataLogement.rating; // stocke le rating récupéré depuis le JSON
+  const rating = dataLogement?.rating; // stocke le rating récupéré depuis le JSON
   const stars = Math.round(rating); // arrondit le rating au nombre entier le plus proche
   const coloredStars = (
     <>

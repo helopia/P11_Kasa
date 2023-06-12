@@ -14,7 +14,6 @@
 }
 
 body {
-  max-width: 95%;
   color: #FF6060;
   margin: auto;
   font-family: "Montserrat", DMSans, sans-serif;
@@ -170,6 +169,7 @@ a {
 }
 
 .navbar {
+  margin: 0 30px 0 30px;
   display: flex;
   /** Si on a n'a pas besoin de flex direction cet attribut ne dois pas etre affiché*/
   flex-direction: row;
@@ -177,6 +177,11 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0 10px 0;
+}
+@media (max-width: 768px) {
+  .navbar {
+    margin: 0 10px 0 10px;
+  }
 }
 .navbar__log {
   width: 54px;
@@ -186,8 +191,17 @@ a {
   font-size: 24px;
   color: #FF6060;
 }
+@media (max-width: 768px) {
+  .navbar__nav__link {
+    margin: 0 10px 0 0;
+  }
+}
 .navbar__nav__link.active {
   border-bottom: 1px solid #FF6060;
+}
+
+.page-acceuil {
+  margin: 0 30px 0 30px;
 }
 
 .logement {
@@ -240,6 +254,7 @@ a {
 .about__main {
   display: flex;
   flex-direction: column;
+  margin: 0 30px 0 30px;
 }
 
 .banner__about {

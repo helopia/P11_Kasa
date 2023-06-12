@@ -2,6 +2,7 @@
 @import "../../sass/utils/variables";
 
 .location{
+  margin: 0 30px 0 30px;
   &__carousel{
     position: relative;
     margin-bottom: 40px;
@@ -48,13 +49,17 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 16px 0 16px 0;
-
+    @media (max-width: $tablets) {
+      justify-content: center;
+    }
     &__leftside {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       gap: 16px;
-
+      @media (max-width: $tablets) {
+        align-items: center;
+      }
       &__tags {
         display: flex;
         color: $primary-color;
@@ -77,6 +82,9 @@
       align-items: center;
       flex-direction: column;
       justify-content: space-between;
+      @media (max-width: $tablets) {
+        margin-top: 5px;
+      }
 
       > div {
         display: flex;
