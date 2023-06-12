@@ -3,6 +3,10 @@ import { useState } from "react";
 import ArrowRight from "../assets/images/ArrowRight.svg";
 import ArrowLeft from "../assets/images/ArrowLeft.svg";
 import "../assets/sass/pages/_logement.scss";
+import Dropdown from "../component/Dropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Error from "./Error";
 const Logement = () => {
   const { dataLogements } = useLoaderData();
   const { IdLogement } = useParams();
@@ -12,7 +16,11 @@ const Logement = () => {
   const dataLogementIndex = dataLogements?.findIndex(
     (logement) => logement.id === IdLogement
   );
+  // test pour la page d'erreur en dessous
 
+  // if (!dataLogements) {
+  //   return <Error />;
+  // }
   const dataLogement = dataLogements[dataLogementIndex];
   //create 2 functions for carousel navigation
   const onClickNextSlide =
@@ -40,7 +48,30 @@ const Logement = () => {
   //       : prev - 1
   //   );
   // };
+  const maxRating = 5; // nombre d'étoiles maximum
+  const rating = dataLogement.rating; // stocke le rating récupéré depuis le JSON
+  const stars = Math.round(rating); // arrondit le rating au nombre entier le plus proche
+  const coloredStars = (
+    <>
+      {Array.from({ length: stars }, (_, index) => (
+        <FontAwesomeIcon key={index} icon={faStar} color="$primary-color" />
+      ))}
+    </>
+  );
 
+  const emptyStars = (
+    <>
+      {Array.from({ length: maxRating - stars }, (_, index) => (
+        <FontAwesomeIcon key={index} icon={faStar} color="#E3E3E3" />
+      ))}
+    </>
+  );
+  const allStars = (
+    <>
+      {coloredStars}
+      {emptyStars}
+    </>
+  );
   return (
     <main className="location">
       {/*<p>{dataLogement?.pictures[0]}</p>*/}
@@ -68,43 +99,72 @@ const Logement = () => {
           </button>
         </div>
       </section>
-      <section>
-        <section className="location__infos">
-          <h1>{dataLogement?.title}</h1>
-          <h3>{dataLogement?.location}</h3>
-        </section>
-        <section className="location__dropdown">
-          <ul>
+      <section className="location__infos">
+        <div className="location__infos__leftside">
+          <div>
+            <h2>{dataLogement?.title}</h2>
+            <p>{dataLogement?.location}</p>
+          </div>
+          <div className="location__infos__leftside__tags">
             {dataLogement?.tags?.map((tag, key) => {
-              return <li key={key}>{tag}</li>;
+              return <span key={key}>{tag}</span>;
             })}
-          </ul>
-        </section>
-
-        <div>
-          <div>
-            <div>{dataLogement?.host?.name}</div>
-            <div>image</div>
           </div>
+        </div>
+        <div className="location__infos__rightside">
           <div>
-            <p>étoiles</p>
+            <p>{dataLogement?.host?.name}</p>
+            <img
+              src={dataLogement?.host?.picture}
+              alt={dataLogement?.host?.picture}
+            />
           </div>
+          <div className="location__infos__stars">{allStars}</div>
         </div>
       </section>
-      <div>
-        <div>
-          <p>description</p>
-          <p>{dataLogement?.description}</p>
-        </div>
-        <div>
-          <p>equipments</p>
-          <ul>
-            {dataLogement?.equipments?.map((equipment, key) => {
-              return <li key={key}>{equipment}</li>;
-            })}
-          </ul>
-        </div>
+      <div className="location__infos__dropdown">
+        <Dropdown title="Description" content={dataLogement?.description} />
+        <Dropdown title="Équipements" content={dataLogement?.equipments} />
       </div>
+
+      {/*<section>*/}
+      {/*  <section className="location__infos">*/}
+      {/*    <h1>{dataLogement?.title}</h1>*/}
+      {/*    <h3>{dataLogement?.location}</h3>*/}
+      {/*  </section>*/}
+      {/*  <section className="location__dropdown">*/}
+      {/*    <ul>*/}
+      {/*      {dataLogement?.tags?.map((tag, key) => {*/}
+      {/*        return <li key={key}>{tag}</li>;*/}
+      {/*      })}*/}
+      {/*    </ul>*/}
+      {/*  </section>*/}
+
+      {/*  <div>*/}
+      {/*    <div>*/}
+      {/*      <div>{dataLogement?.host?.name}</div>*/}
+      {/*      <div>image</div>*/}
+      {/*    </div>*/}
+      {/*    <div>*/}
+      {/*      <p>étoiles</p>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
+      {/*<div>*/}
+      {/*  <div>*/}
+      {/*    <p>description</p>*/}
+      {/*    <p>{dataLogement?.description}</p>*/}
+      {/*  </div>*/}
+      {/*  <div>*/}
+      {/*    <p>equipments</p>*/}
+      {/*    <Dropdown></Dropdown>*/}
+      {/*    <ul>*/}
+      {/*      {dataLogement?.equipments?.map((equipment, key) => {*/}
+      {/*        return <li key={key}>{equipment}</li>;*/}
+      {/*      })}*/}
+      {/*    </ul>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </main>
   );
 };

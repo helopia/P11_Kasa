@@ -8,12 +8,15 @@
   justify-content: center;
   background-size: cover;
 
-
   &__title{
     color: white;
     font-size: 48px;
     font-weight: $font-medium;
-
+    margin: 0 10px 0 10px;
+    @media (max-width: $tablets) {
+      text-align: left;
+      font-size: 36px;
+    }
   }
   &__home{
     background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");

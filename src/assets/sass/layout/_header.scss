@@ -2,11 +2,8 @@
 @import "../../sass/utils/variables";
 .navbar {
   @include flex(row, space-between, center);
-  height: 68px;
-  margin: 0 ;
-
+  padding: 10px 0 10px 0;
   &__log {
-
     width: 54px;
   }
 

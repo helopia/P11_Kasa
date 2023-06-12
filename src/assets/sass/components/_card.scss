@@ -4,6 +4,10 @@
 .logement-card{
   border-radius: 10px;
   position: relative;
+  max-height: 340px;
+  @media (max-width: $tablets) {
+    max-height: 280px;
+  }
   &__overlay{
     box-shadow: inset -1px -81px 84px -37px #000;
     inset: 0;

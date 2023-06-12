@@ -8,10 +8,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap : 40px;
-  //@include responsive(smartphone){
-  //  grid-template-columns: 1fr;
-  //  padding: 0px;
-  //  background-color: #FFFFFF;
-  //  gap :20px;
-  //}
+  @media (max-width: $tablets) {
+
+    grid-template-columns: 1fr;
+    padding: 0px;
+    background-color: #FFFFFF;
+    gap :20px;
+  }
 }

@@ -8,17 +8,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   list-style: none;
 }
 
 body {
-  font-size: 0.75rem; /* 12px */
+  max-width: 95%;
   color: #FF6060;
-  width: 90%;
   margin: auto;
   font-family: "Montserrat", DMSans, sans-serif;
   font-weight: 400;
@@ -26,15 +23,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-.main {
-  min-height: 400px;
-  width: 100%;
-}
-
-section {
-  width: 100%;
 }
 
 .banner {
@@ -49,6 +37,13 @@ section {
   color: white;
   font-size: 48px;
   font-weight: 500;
+  margin: 0 10px 0 10px;
+}
+@media (max-width: 768px) {
+  .banner__title {
+    text-align: left;
+    font-size: 36px;
+  }
 }
 .banner__home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");
@@ -60,6 +55,12 @@ section {
 .logement-card {
   border-radius: 10px;
   position: relative;
+  max-height: 340px;
+}
+@media (max-width: 768px) {
+  .logement-card {
+    max-height: 280px;
+  }
 }
 .logement-card__overlay {
   box-shadow: inset -1px -81px 84px -37px #000;
@@ -82,6 +83,52 @@ section {
   top: -77px;
 }
 
+.dropdown {
+  margin-bottom: 16px;
+}
+.dropdown__title {
+  font-size: clamp(8px, 3vw, 12px);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  background-color: #FF6060;
+  border-radius: 6px;
+  margin: 0;
+}
+.dropdown__title h2 {
+  padding: 12px;
+  margin: 0;
+  font-weight: 400;
+}
+.dropdown__title button {
+  border: none;
+  background: none;
+  padding: 12px;
+}
+.dropdown__content {
+  color: #FF6060;
+  background-color: #F6F6F6;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.dropdown__content p {
+  margin: 0;
+  padding: 16px;
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 400;
+  line-height: 28px;
+}
+.dropdown__content ul {
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+}
+.dropdown__content ul li {
+  font-size: clamp(16px, 3vw, 22px);
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
 .banner {
   height: 223px;
   border-radius: 25px;
@@ -94,6 +141,13 @@ section {
   color: white;
   font-size: 48px;
   font-weight: 500;
+  margin: 0 10px 0 10px;
+}
+@media (max-width: 768px) {
+  .banner__title {
+    text-align: left;
+    font-size: 36px;
+  }
 }
 .banner__home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/bannerAcceuil.png");
@@ -103,17 +157,15 @@ section {
 }
 
 .footer {
-  height: 209px;
+  padding: 10px 0 10px 0;
   background-color: #000000;
   color: #FFFFFF;
-  margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .footer__text {
-  margin-top: 40px;
   font-size: 24px;
 }
 
@@ -124,8 +176,7 @@ section {
   /** si le pramettre  $justify-content égale à 0 >> on utilise pas l'attribut justify-content */
   justify-content: space-between;
   align-items: center;
-  height: 68px;
-  margin: 0;
+  padding: 10px 0 10px 0;
 }
 .navbar__log {
   width: 54px;
@@ -148,14 +199,30 @@ section {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
 }
+@media (max-width: 768px) {
+  .logement {
+    grid-template-columns: 1fr;
+    padding: 0px;
+    background-color: #FFFFFF;
+    gap: 20px;
+  }
+}
 
 .error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #FF6060;
 }
 .error-page__404 {
   font-size: 288px;
   font-weight: 700;
+}
+@media (max-width: 768px) {
+  .error-page__404 {
+    font-size: 140px;
+  }
 }
 .error-page__text {
   font-size: 36px;
@@ -165,6 +232,33 @@ section {
   font-size: 18px;
   font-weight: 500;
   color: #FF6060;
+}
+.error-page__link:hover {
+  text-decoration: underline;
+}
+
+.about__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner__about {
+  margin-bottom: 15px;
+}
+
+.about__dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdown {
+  width: 80%;
+}
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

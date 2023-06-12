@@ -1,5 +1,7 @@
-.location{
+@import "../../sass/utils/mixins";
+@import "../../sass/utils/variables";
 
+.location{
   &__carousel{
     position: relative;
     margin-bottom: 40px;
@@ -39,5 +41,78 @@
         margin-left: 20px;
       }
     }
+  }
+
+  &__infos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 16px 0 16px 0;
+
+    &__leftside {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+
+      &__tags {
+        display: flex;
+        color: $primary-color;
+        }
+      }
+      span {
+        background-color: $primary-color;
+        color: #fff;
+        border-radius: 26px;
+        padding: 8px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: fit-content;
+        margin-right: 5px;
+    }
+    &__rightside {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+
+      > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+      }
+
+      p:first-child {
+        width: 100px;
+        text-align: center;
+
+      }
+      img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+      }
+
+      &__stars {
+        display: flex;
+        gap: 6px;
+      }
+    }
+
+    &__dropdown {
+    display: flex;
+    gap: 12px;
+      @media (max-width: $tablets) {
+        flex-direction: column;
+      }
+      .dropdown {
+      width: 50%;
+        @media (max-width: $tablets) {
+          width: 100%;
+        }
+      }
+   }
   }
 }

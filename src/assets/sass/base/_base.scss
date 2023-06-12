@@ -1,24 +1,16 @@
 @import '../../sass/utils/mixins.scss';
 @import '../../sass/utils/variables';
 *{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   list-style: none;
 }
 
 body{
-  font-size: 0.75rem; /* 12px */
+  max-width: 95%;
   color: $primary-color;
-  width: 90%;
   margin: auto;
   font-family: $font-text, DM+Sans, sans-serif;
   font-weight: $font-regular;
-  //@include responsive(smartphone){
-  //  width: 94%;
-  //}
 }
-
 a{
   text-decoration: none;
 }

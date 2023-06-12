@@ -1,11 +1,17 @@
 @import '../../sass/utils/variables';
 
 .error-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   color :$primary-color;
   &__404{
     font-size: 288px;
     font-weight: $font-bold;
+    @media (max-width: $tablets) {
+      font-size: 140px;
+    }
 
   }
   &__text{
@@ -17,9 +23,9 @@
     font-size:18px;
     font-weight: $font-medium;
     color :$primary-color;
-    //&.active{
-    //  border-bottom:1px solid $primary-color;
-    //}
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
 }
